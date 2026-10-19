@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+  <title>Landing — Gratis y sin host de pago</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600;900&display=swap');
+
+    :root {
+      --bg: #0b0b11;
+      --surface: #12121a;
+      --text: #eaeaf2;
+      --muted: #8a8899;
+      --accent: #c8f56e;
+      --glass: rgba(255,255,255,0.05);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .blobs {
+      position: fixed; inset: 0; z-index: 0;
+      pointer-events: none; overflow: hidden;
+    }
+    .blobs .blob {
+      position: absolute; border-radius: 50%;
+      filter: blur(120px); opacity: 0.35;
+      animation: floatBlob 20s ease-in-out infinite alternate;
+    }
+    .blob1 { width: 320px; height: 320px; background: #6ee8c8; top: -10%; left: -8%; animation-delay: 0s; }
+    .blob2 { width: 400px; height: 400px; background: #f0a0ff; bottom: -15%; right: -10%; animation-delay: -7s; }
+    .blob3 { width: 260px; height: 260px; background: var(--accent); top: 45%; left: 60%; animation-delay: -14s; opacity: 0.2; }
+    @keyframes floatBlob {
+      from { transform: translate(0, 0) scale(1); }
+      to { transform: translate(30px, -30px) scale(1.1); }
+    }
+
+    main { position: relative; z-index: 1; }
+    section { max-width: 640px; margin: 0 auto; padding: 0 24px; }
+
+    .hero {
+      min-height: 100dvh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center; gap: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 12vw, 4.5rem);
+      font-weight: 900; letter-spacing: -0.04em; line-height: 1.05;
+      background: linear-gradient(135deg, #fff 50%, var(--accent));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero h1 span { color: var(--accent); -webkit-text-fill-color: var(--accent); }
+    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 480px; }
+    .btn-group { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 14px;
+      text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      transition: transform .2s ease, box-shadow .3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,.4);
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), #a8e062); color: #0b0b11; }
+    .btn-ghost { background: var(--glass); color: var(--text); border: 1px solid rgba(255,255,255,0.08); }
+
+    .section-card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 24px; padding: 36px 28px; margin: 80px 0;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5); backdrop-filter: blur(8px);
+    }
+    .section-card h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .section-card .sub { color: var(--muted); margin-bottom: 24px; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+    .tag { padding: 6px 14px; border-radius: 100px; background: var(--glass); border: 1px solid rgba(255,255,255,0.08); font-size: 0.85rem; color: var(--muted); }
+
+    .feature-grid { display: grid; gap: 14px; margin-top: 16px; }
+    .feature { display: flex; align-items: flex-start; gap: 14px; padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); }
+    .feature .icon { width: 42px; height: 42px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), #a8e062); display: grid; place-items: center; flex-shrink: 0; font-size: 1.1rem; color: #0b0b11; }
+    .feature h3 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+    .feature p { font-size: 0.9rem; color: var(--muted); }
+
+    footer { text-align: center; padding: 60px 24px 32px; color: var(--muted); font-size: 0.85rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="blobs" aria-hidden="true">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+
+  <main>
+    <section class="hero" aria-label="Inicio">
+      <div style="display:inline-block; padding: 6px 14px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.08); background: var(--glass); font-size: 0.8rem; color: var(--muted); letter-spacing: 0.05em;">100% ESTÁTICO · GRATIS · SIN HOST DE PAGO</div>
+      <h1>Una landing <span>real</span> sin depender de un host de pago</h1>
+      <p>Archivo HTML único. Abre en tu móvil, compártelo como archivo o súbelo a GitHub Pages / Netlify cuando quieras. Nada oculto, nada de letra pequeña.</p>
+      <div class="btn-group">
+        <a href="#hosting" class="btn btn-primary">Ver hosting recomendado</a>
+        <a href="#archivo" class="btn btn-ghost">Ver archivo</a>
+      </div>
+    </section>
+
+    <section class="section-card" id="archivo" aria-label="Archivo">
+      <h2>¿Qué es exactamente?</h2>
+      <p class="sub">Una página web estática lista para usar.</p>
+      <div class="tags">
+        <span class="tag">HTML único</span>
+        <span class="tag">CSS embebido</span>
+        <span class="tag">Sin backend</span>
+        <span class="tag">Sin base de datos</span>
+        <span class="tag">Sin suscripción</span>
+      </div>
+      <p style="margin-top: 18px; color: var(--muted); font-size: 0.95rem;">Puedes abrir este archivo directamente en tu teléfono. También puedes subirlo a un hosting gratuito para que tenga una URL pública.</p>
+    </section>
+
+    <section class="section-card" id="hosting" aria-label="Hosting recomendado">
+      <h2>Hosting gratuito recomendado</h2>
+      <p class="sub">Sin engaños. Sin límites ocultos. Sin tarjeta.</p>
+      <div class="feature-grid">
+        <article class="feature">
+          <div class="icon" aria-hidden="true">▲</div>
+          <div><h3>GitHub Pages</h3><p>Sube tu archivo a un repositorio público. GitHub te da una URL gratis y estable para siempre.</p></div>
+        </article>
+        <article class="feature">
+          <div class="icon" aria-hidden="true">◆</div>
+          <div><h3>Netlify Drop</h3><p>Arrastra tu archivo <code>index.html</code> a netlify.com. En segundos tienes una URL pública sin registro obligatorio.</p></div>
+        </article>
+        <article class="feature">
+          <div class="icon" aria-hidden="true">●</div>
+          <div><h3>Archivo local</h3><p>Guarda este archivo en tu móvil. Ábrelo con cualquier navegador. Funciona sin internet.</p></div>
+        </article>
+      </div>
+      <p style="margin-top: 20px; font-size: 0.85rem; color: var(--muted);">Recomendación: empieza con el archivo local. Si luego quieres una URL pública, sube el mismo archivo a GitHub Pages o Netlify.</p>
+    </section>
+
+    <section class="section-card" aria-label="Resumen">
+      <h2>Resumen claro</h2>
+      <p class="sub">Lo que obtienes y lo que no.</p>
+      <div class="tags" style="margin-top: 8px;">
+        <span class="tag">Sin pago</span>
+        <span class="tag">Sin letra pequeña</span>
+        <span class="tag">Sin límite de visitas</span>
+        <span class="tag">Sin anuncios obligatorios</span>
+        <span class="tag">Sin cuenta obligatoria</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Landing estática creada sin host de pago · <a href="#archivo">Archivo</a> · <a href="#hosting">Hosting gratis</a></p>
+    <p style="margin-top: 6px; opacity: 0.6;">No requiere tarjeta, no tiene límite oculto, no depende de ningún servicio de pago.</p>
+  </footer>
+</body>
+</html>
