@@ -87,6 +87,8 @@
     .tag { padding: 6px 14px; border-radius: 100px; background: var(--glass); border: 1px solid rgba(255,255,255,0.08); font-size: 0.85rem; color: var(--muted); }
 
     .feature-grid { display: grid; gap: 14px; margin-top: 16px; }
+    .gallery-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; justify-content: center; }
+    .gallery-row img { width: 140px; height: 100px; object-fit: cover; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 4px 16px rgba(0,0,0,.35); }
     .feature { display: flex; align-items: flex-start; gap: 14px; padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); }
     .feature .icon { width: 42px; height: 42px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), #a8e062); display: grid; place-items: center; flex-shrink: 0; font-size: 1.1rem; color: #0b0b11; }
     .feature h3 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
@@ -140,6 +142,12 @@
             <p>Servicio de secado en horno. La madera se somete a calor por horas o días según el nivel de humedad que requiera el cliente.</p>
           </div>
         </article>
+      </div>
+      <div class="gallery-row" aria-label="Fotos de productos">
+        <img src="S1.jpg" alt="Producto S1" loading="lazy">
+        <img src="S2.jpg" alt="Producto S2" loading="lazy">
+        <img src="S3.jpg" alt="Producto S3" loading="lazy">
+        <img src="S4.jpg" alt="Producto S4" loading="lazy">
       </div>
     </section>
 
